@@ -1,0 +1,163 @@
+/* --- Réglages de base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Défilement fluide entre les sections */
+    /* Empêche le menu de cacher le titre des sections lors du clic */
+    scroll-padding-top: 70px; 
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* --- Barre de navigation --- */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    border-bottom: 2px solid #007bff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #007bff;
+}
+
+/* --- Sections et Conteneurs --- */
+.section {
+    padding: 100px 20px;
+    min-height: 80vh; /* Chaque section prend au moins 80% de l'écran */
+    display: flex;
+    align-items: center;
+}
+
+.bg-alt {
+    background-color: #181818; /* Alternance de couleur pour distinguer les sections */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 20px; }
+.highlight { color: #007bff; }
+
+/* --- Grilles et Cartes --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #242424;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Petit effet de soulèvement au survol */
+}
+
+.card h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* --- Boutons et Liens --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover { background-color: #0056b3; }
+
+.doc-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.doc-list li {
+    background-color: #242424;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.doc-list a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #777;
+    border-top: 1px solid #333;
+}
