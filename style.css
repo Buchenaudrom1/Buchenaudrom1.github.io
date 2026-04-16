@@ -1,18 +1,34 @@
-/* ============================================================== */
-/* VARIABLES THEME CLAIR (LIGHT MODE)                             */
-/* ============================================================== */
+/* ==========================================================================
+   VARIABLES GLOBALES (Thème Clair - Design Professionnel SISR)
+   ========================================================================== */
 :root {
-    --primary-color: #0066cc; 
-    --bg-main: #f8f9fa; 
-    --bg-alt: #ffffff; 
-    --text-dark: #2b2d42; 
-    --text-light: #6c757d; 
-    --transition: all 0.3s ease;
+    /* Palette de couleurs */
+    --primary: #2563eb;         /* Bleu principal, inspire la confiance technique */
+    --primary-hover: #1d4ed8;   /* Bleu foncé pour les effets de survol */
+    --primary-light: #eff6ff;   /* Bleu très clair pour le fond des éléments actifs */
+    
+    --bg-body: #f8fafc;         /* Gris très clair (fond de la page principale) */
+    --bg-surface: #ffffff;      /* Blanc pur (pour le menu, les cartes, etc.) */
+    
+    --text-main: #1e293b;       /* Gris ardoise foncé (pour une lisibilité optimale) */
+    --text-muted: #64748b;      /* Gris moyen pour les sous-titres et descriptions */
+    --border-color: #e2e8f0;    /* Gris très clair pour les séparations discrètes */
+
+    /* Dimensions et espacements */
+    --sidebar-width: 280px;     /* Largeur fixe du menu de gauche */
+    --radius-md: 8px;           /* Arrondi standard pour les boutons et menus */
+    --radius-lg: 12px;          /* Arrondi prononcé pour les cartes de projets */
+
+    /* Ombres et Transitions */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ============================================================== */
-/* RESET ET RÉGLAGES DE BASE                                      */
-/* ============================================================== */
+/* ==========================================================================
+   RESET & CONFIGURATION DE BASE
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -20,374 +36,306 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+    scroll-behavior: smooth; /* Permet le scroll fluide vers les sections */
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-dark);
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
+    display: flex; /* Prépare le terrain pour Sidebar à gauche / Contenu à droite */
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Utilitaires d'espacement */
-.mt-2 { margin-top: 15px; }
-.mt-4 { margin-top: 40px; }
-.mb-3 { margin-bottom: 25px; }
-
-/* ============================================================== */
-/* BARRE DE NAVIGATION (NAVBAR)                                   */
-/* ============================================================== */
-#navbar {
-    background: #ffffff;
-    height: 70px;
-    display: flex;
-    align-items: center;
+/* ==========================================================================
+   MENU DE NAVIGATION LATÉRAL (Sidebar)
+   ========================================================================== */
+/* La balise HTML doit être : <aside class="sidebar"> ou <nav class="sidebar"> */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh; /* Prend toute la hauteur de l'écran */
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.nav-container {
+    left: 0;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color); /* Cadre bien défini */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    z-index: 1000;
 }
 
-.logo {
+/* Logo ou Nom en haut du menu */
+.sidebar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-main);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+.sidebar-brand span {
+    color: var(--primary); /* Met en valeur l'option SISR par exemple */
 }
 
-.logo span { color: var(--primary-color); }
-
-.nav-links {
-    display: flex;
+/* Liste des liens */
+.sidebar-nav {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espace entre chaque lien */
 }
 
-.nav-links li a {
+/* Style des liens du menu */
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--text-light);
-    margin-left: 2rem;
-    font-weight: 600;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-md);
     transition: var(--transition);
+    border-left: 3px solid transparent; /* Prépare l'indicateur visuel */
 }
 
-.nav-links li a:hover, .nav-links li a.active {
-    color: var(--primary-color);
+/* Effet Hover (Au survol) */
+.sidebar-nav a:hover {
+    background-color: var(--bg-body);
+    color: var(--primary);
+    transform: translateX(4px); /* Léger décalage vers la droite */
 }
 
-/* ============================================================== */
-/* SECTIONS GÉNÉRALES                                             */
-/* ============================================================== */
-.section { padding: 90px 0; }
-.bg-light { background-color: var(--bg-alt); }
+/* État Actif (Section actuellement visible) */
+.sidebar-nav a.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-left: 3px solid var(--primary); /* Indicateur visuel à gauche */
+    font-weight: 600;
+}
 
-/* Titres alignés à gauche avec ligne de soulignement asymétrique */
+/* ==========================================================================
+   CONTENU PRINCIPAL & LAYOUT
+   ========================================================================== */
+/* La balise englobante du contenu doit être : <main class="main-content"> */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width); /* Pousse le contenu à droite du menu fixe */
+    width: calc(100% - var(--sidebar-width));
+    padding: 3rem;
+}
+
+/* Conteneur pour centrer et limiter la largeur des textes */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Styles des Sections */
+section {
+    min-height: 80vh; /* Permet d'avoir de l'espace pour scroller */
+    padding-top: 4rem; /* Évite que le haut de la section soit collé à l'écran */
+    margin-bottom: 4rem;
+}
+
 .section-title {
     font-size: 2.2rem;
-    margin-bottom: 3rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
     position: relative;
-    color: var(--text-dark);
-    display: block; /* Force l'alignement à gauche */
+    padding-bottom: 0.5rem;
 }
 
+/* Petit trait bleu décoratif sous les titres de sections */
 .section-title::after {
     content: '';
     position: absolute;
-    width: 60px; /* Ligne courte à gauche */
-    height: 4px;
-    background: var(--primary-color);
-    bottom: -10px;
+    bottom: 0;
     left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
     border-radius: 2px;
 }
 
-.sous-titre {
-    font-size: 1.4rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    padding-left: 10px;
-    border-left: 3px solid var(--primary-color);
-}
-
-/* ============================================================== */
-/* HERO SECTION (2 Colonnes)                                      */
-/* ============================================================== */
-.hero-section {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%); 
-    display: flex;
-    align-items: center;
-    padding-top: 70px;
-}
-
-.hero-split {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-.hero-text {
-    flex: 1; /* Prend la moitié de l'espace */
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.hero-text h1 span { color: var(--primary-color); }
-
-.hero-text h2 {
-    font-size: 1.5rem;
-    color: var(--text-light);
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.hero-text p {
+.section-subtitle {
+    color: var(--text-muted);
     font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 30px;
-    max-width: 90%;
+    margin-bottom: 3rem;
 }
 
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-/* Espace pour ta photo, forme ronde moderne */
-.profile-pic {
-    width: 350px;
-    height: 350px;
-    background-color: #d1d9e6;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Forme organique */
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
-    background-image: url('./Image/photo.jpg'); /* Chemin vers ta photo */
-    background-size: cover;
-    background-position: center;
-}
-
-/* ============================================================== */
-/* BOUTONS                                                        */
-/* ============================================================== */
-.btn {
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-.primary { background: var(--primary-color); color: white; margin-right: 15px; }
-.secondary { background: white; border: 2px solid var(--primary-color); color: var(--primary-color); }
-
-.primary:hover { background: #0052a3; transform: translateY(-2px); }
-.secondary:hover { background: var(--primary-color); color: white; transform: translateY(-2px); }
-
-.btn-doc {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 20px;
-    background-color: var(--bg-main);
-    color: var(--primary-color);
-    border: 1px solid #d1d9e6;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.btn-doc:hover {
-    border-color: var(--primary-color);
-    background-color: white;
-    transform: translateX(5px); /* Glisse vers la droite au survol */
-}
-
-/* ============================================================== */
-/* GRILLES ET CARTES (Projets)                                    */
-/* ============================================================== */
+/* ==========================================================================
+   COMPOSANTS : CARTES (Cards) & GRILLES
+   ========================================================================== */
+/* Grille responsive pour les projets/procédures */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
+/* Style de la carte */
 .card {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    border: 1px solid #f0f0f0;
-}
-
-.card:hover { 
-    transform: translateY(-8px); 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.card-img { 
-    height: 220px; 
-    background-size: cover; 
-    background-position: center;
-    background-color: #e9ecef;
-    border-bottom: 3px solid var(--primary-color);
-}
-
-.card-body { padding: 25px; }
-.card-body h4 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
-.card-body p { color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
-
-.link { 
-    color: var(--primary-color); 
-    text-decoration: none; 
-    font-weight: 600;
-    display: inline-block;
-    transition: var(--transition);
-}
-.link:hover { transform: translateX(5px); }
-
-/* ============================================================== */
-/* GRILLE DES PROCÉDURES (PDF)                                    */
-/* ============================================================== */
-.doc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-}
-
-.doc-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-dark);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-    border: 1px solid #eaeaea;
-    transition: var(--transition);
+    flex-direction: column;
 }
 
-.doc-item:hover { 
-    background: #f8fbfd; 
-    border-color: var(--primary-color);
+/* Effet "Lift" au survol de la carte */
+.card:hover {
+    transform: translateY(-5px); /* La carte se soulève */
+    box-shadow: var(--shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.card h3 {
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pousse le bouton vers le bas si le texte est court */
+}
+
+/* ==========================================================================
+   COMPOSANTS : BOUTONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+}
+
+/* Bouton principal (Bleu) */
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Bouton secondaire (Bordure) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-light);
+}
+
+/* ==========================================================================
+   BONUS : BOUTON RETOUR EN HAUT
+   ========================================================================== */
+/* Idéalement activé via JS, mais stylé ici */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    z-index: 1000;
+    opacity: 0; /* Caché par défaut, utiliser JS pour mettre opacity: 1 au scroll */
+    pointer-events: none;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#back-to-top:hover {
+    background-color: var(--primary-hover);
     transform: translateY(-3px);
 }
 
-.doc-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablettes & Mobiles)
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
 
-.doc-icon { font-size: 1.5rem; }
-.doc-name { font-weight: 500; }
+    /* Le menu de gauche devient une barre horizontale en haut */
+    .sidebar {
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
 
-.badge { 
-    background: #e3f2fd; 
-    color: var(--primary-color); 
-    padding: 5px 10px; 
-    border-radius: 4px; 
-    font-size: 0.8rem; 
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
+    .sidebar-brand {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
 
-/* ============================================================== */
-/* VEILLE TECHNOLOGIQUE                                           */
-/* ============================================================== */
-.veille-split {
-    display: flex;
-    gap: 40px;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-}
+    /* Adaptation des liens pour l'horizontal */
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 1rem;
+        overflow-x: auto; /* Permet de scroller le menu de gauche à droite si trop long */
+        padding-bottom: 5px;
+    }
 
-.veille-text { flex: 2; }
-.veille-text p { margin-bottom: 15px; color: var(--text-light); }
+    .sidebar-nav a {
+        padding: 0.5rem 0.8rem;
+        border-left: none; /* On enlève la bordure gauche... */
+        border-bottom: 3px solid transparent; /* ...pour la mettre en bas */
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    }
 
-.veille-tools {
-    flex: 1;
-    background: var(--bg-main);
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-color);
-}
+    .sidebar-nav a:hover {
+        transform: translateY(-2px); /* Effet vers le haut au lieu de la droite */
+    }
 
-.veille-tools h4 { margin-bottom: 15px; }
+    .sidebar-nav a.active {
+        border-left: none;
+        border-bottom: 3px solid var(--primary);
+    }
 
-.styled-list { list-style: none; }
-.styled-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-.styled-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* ============================================================== */
-/* ANIMATIONS ET BOUTON RETOUR                                    */
-/* ============================================================== */
-.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-
-#back-to-top {
-    position: fixed; bottom: 30px; right: 30px;
-    display: none;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    width: 45px; height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,102,204,0.3);
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-#back-to-top:hover { background: #0052a3; transform: translateY(-3px); }
-
-/* ============================================================== */
-/* RESPONSIVE (TÉLÉPHONES ET PETITS ÉCRANS)                       */
-/* ============================================================== */
-@media (max-width: 900px) {
-    .hero-split { flex-direction: column-reverse; text-align: center; gap: 30px; }
-    .hero-text { text-align: left; }
-    .hero-image { margin-bottom: 20px; }
-    .veille-split { flex-direction: column; }
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; } 
-    .hero-text h1 { font-size: 2.2rem; }
+    /* Le contenu principal repasse en pleine largeur sous le menu */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+        margin-top: 70px; /* Compense la hauteur du menu fixe en haut */
+    }
 }
