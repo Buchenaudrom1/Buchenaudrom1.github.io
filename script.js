@@ -1,32 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. GESTION DU MENU ACTIF AU SCROLL
+    /* ==========================================================
+       1. GESTION DU MENU ACTIF AU SCROLL
+       ========================================================== */
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".sidebar-nav a");
 
     window.addEventListener("scroll", () => {
         let current = "";
 
-        // On parcourt chaque section pour voir si on est dessus
+        // Identifie la section visible à l'écran
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            
-            // Le "- 150" permet d'activer le menu un peu avant que la section ne touche tout à fait le haut de l'écran
+            // Décalage pour activer le menu un peu avant
             if (scrollY >= sectionTop - 150) {
                 current = section.getAttribute("id");
             }
         });
 
-        // On met à jour les liens du menu
+        // Met à jour la surbrillance dans le menu de gauche
         navLinks.forEach((link) => {
-            // On enlève la couleur bleue de base sur tous les liens
             link.classList.remove("active");
-            
-            // Si le lien correspond à la section actuelle, on lui ajoute la classe 'active'
             if (link.getAttribute("href") === `#${current}`) {
                 link.classList.add("active");
             }
         });
     });
+
+    /* ==========================================================
+       2. GESTION DU BOUTON "RETOUR EN HAUT"
+       ========================================================== */
+    const backToTopBtn = document.getElementById("back-to-top");
+
+    // Vérifie si le bouton existe bien dans le HTML
+    if (backToTopBtn) {
+        
+        // Affiche ou cache le bouton selon le défilement
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "flex"; // Affiche le bouton
+            } else {
+                backToTopBtn.style.display = "none"; // Cache le bouton
+            }
+        });
+
+        // Action au clic : remonte tout en haut en douceur
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
 });
