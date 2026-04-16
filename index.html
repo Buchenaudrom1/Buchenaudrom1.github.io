@@ -195,7 +195,7 @@
 <section id="procedures">
     <div class="container">
         <h2 class="section-title">Mes Procédures & Travaux Pratiques</h2>
-        <p class="section-subtitle">Inventaire complet des compétences techniques et documentations</p>
+        <p class="section-subtitle">Cliquez sur une procédure pour l'ouvrir en plein écran</p>
 
         <div class="procedures-layout">
             
@@ -203,154 +203,45 @@
                 <h3 class="column-title"><span class="icon">🌐</span> Réseau & Système</h3>
                 <div class="proc-grid">
                     
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Routage & Switching CISCO</h4>
-                        <p>Configuration de base, SSH, VLANs et RIPv2.</p>
-                        <a href="./docs/Procedure-Routage-Cisco.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
+                    <a href="./docs/Procedure-Routage-Cisco.pdf" target="_blank" class="proc-card-link">
+                        <div class="proc-card">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Routage & Switching CISCO</h4>
+                            <div class="pdf-preview">
+                                <iframe src="./docs/Procedure-Routage-Cisco.pdf#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
+                            </div>
+                            <p>Configuration de base, SSH, VLANs et RIPv2.</p>
+                        </div>
+                    </a>
 
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Apache2 TLS & FTPS</h4>
-                        <p>Sécurisation des flux web et transferts de fichiers.</p>
-                        <a href="./docs/Apache_TLS.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
+                    <a href="./docs/Apache_TLS.pdf" target="_blank" class="proc-card-link">
+                        <div class="proc-card">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Apache2 TLS & FTPS</h4>
+                            <div class="pdf-preview">
+                                <iframe src="./docs/Apache_TLS.pdf#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
+                            </div>
+                            <p>Sécurisation des flux web et transferts de fichiers.</p>
+                        </div>
+                    </a>
 
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>DNS Bind9</h4>
-                        <p>Configuration avancée de zones master/slave.</p>
-                        <a href="./docs/Configuration_avancee_de_BIND9.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
                     </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>HAproxy</h4>
-                        <p>Répartition de charge et haute disponibilité.</p>
-                        <a href="./docs/Repartition_charge-synthese.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Annuaire OpenLDAP</h4>
-                        <p>Installation et gestion d'un annuaire centralisé.</p>
-                        <a href="./docs/TP_OpenLDAP_2025.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Samba 4 (Contrôleur de domaine)</h4>
-                        <p>Gestion d'un domaine Active Directory sous Linux.</p>
-                        <a href="./docs/TP_Samba_4_en_contrôleur_de_domaine.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>IPv6 & DHCPv6</h4>
-                        <p>Implémentation et adressage nouvelle génération.</p>
-                        <a href="./docs/Pratique-IPv6-DHCPv6.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>MariaDB (Architecture 3-tiers)</h4>
-                        <p>Mise en place de bases de données relationnelles.</p>
-                        <a href="./docs/Architecture_3-tiers.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Serveur Mail Postfix</h4>
-                        <p>Configuration d'un service d'envoi de courriels.</p>
-                        <a href="#" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>NAT / PAT</h4>
-                        <p>Translation d'adresses réseau sur routeur Cisco.</p>
-                        <a href="#" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag warning">À refaire</span>
-                        <h4>Windows Active Directory</h4>
-                        <p>Gestion des GPO et des unités d'organisation.</p>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag warning">À refaire</span>
-                        <h4>Serveur ProFTP</h4>
-                        <p>Mise en place d'un serveur de fichiers FTP.</p>
-                        <a href="./docs/TP-Le_serveur_ProFTP.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag error">Manquante</span>
-                        <h4>DHCP / Docker / NGinx / SFTP</h4>
-                        <p>Services en cours de déploiement ou d'étude.</p>
-                    </div>
-
-                </div>
             </div>
 
             <div class="proc-column">
                 <h3 class="column-title"><span class="icon">🛡️</span> Cybersécurité</h3>
                 <div class="proc-grid">
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Attaques MITM & SSH</h4>
-                        <p>Analyse d'attaques et contre-mesures SSH.</p>
-                        <a href="./docs/activite1_partie3_bonnes_pratiques_SSH_Etudiants_2SIO.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>DDoS & DoS (Couche 4)</h4>
-                        <p>Analyse de sécurité et tests de résistance.</p>
-                        <a href="./docs/Compte_rendu_TP_DDoS.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>DHCP Snooping</h4>
-                        <p>Sécurisation des attributions d'IP sur le réseau.</p>
-                        <a href="./docs/DHCP_snooping.docx" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>ACL (Access Control Lists)</h4>
-                        <p>Filtrage de trafic sur équipements réseau.</p>
-                        <a href="#" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag success">Terminé</span>
-                        <h4>Intégrité (Hash/Checksum)</h4>
-                        <p>Vérification des ressources via somme de contrôle.</p>
-                        <a href="./docs/TP_1_integrite_ressource_informatique_Buchenaud.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag error">Manquante</span>
-                        <h4>Port Security</h4>
-                        <p>Sécurisation physique des ports du switch.</p>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag error">Manquante</span>
-                        <h4>Spoofing & Cam overflow</h4>
-                        <p>Étude des attaques de saturation de table MAC.</p>
-                    </div>
-
-                    <div class="proc-card">
-                        <span class="status-tag error">Manquante</span>
-                        <h4>ARP / IPV4</h4>
-                        <p>Analyses protocolaires de base.</p>
-                    </div>
+                    
+                    <a href="./docs/Compte_rendu_TP_DDoS.pdf" target="_blank" class="proc-card-link">
+                        <div class="proc-card">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>DDoS & DoS (Couche 4)</h4>
+                            <div class="pdf-preview">
+                                <iframe src="./docs/Compte_rendu_TP_DDoS.pdf#toolbar=0&navpanes=0&scrollbar=0" frameborder="0"></iframe>
+                            </div>
+                            <p>Analyse de sécurité et tests de résistance.</p>
+                        </div>
+                    </a>
 
                 </div>
             </div>
