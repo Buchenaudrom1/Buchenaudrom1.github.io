@@ -3,115 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - BTS SIO SISR</title>
+    <title>Portfolio | Prénom Nom - BTS SIO SISR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav id="navbar">
-        <div class="logo">Mon Portfolio SISR</div>
-        <ul class="nav-links">
-            <li><a href="#presentation" class="active">Présentation</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#procedures">Procédures</a></li>
-            <li><a href="#veille">Veille Tech</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">PN <span>SISR</span></div>
+            <ul class="nav-links">
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#synthese">Synthèse</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+                <li><a href="#procedures">Procédures</a></li>
+                <li><a href="#veille">Veille</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
 
-    <section id="presentation" class="section">
+    <section id="presentation" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bonjour, je suis <span>Prénom Nom</span></h1>
+                <p>Étudiant en BTS SIO option SISR. Passionné par l'administration réseaux, la virtualisation et la cybersécurité.</p>
+                <div class="hero-btns">
+                    <a href="#realisations" class="btn primary">Voir mes projets</a>
+                    <a href="./docs/CV.pdf" target="_blank" class="btn secondary">Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="synthese" class="section bg-light">
         <div class="container text-center">
-            <h1>Bonjour, je suis <span class="highlight">Ton Prénom</span></h1>
-            <h2>Futur Administrateur Systèmes et Réseaux</h2>
-            <p>Étudiant en BTS SIO option SISR, je suis passionné par l'infrastructure, la virtualisation et la cybersécurité. Bienvenue sur mon portfolio conçu pour l'épreuve E6.</p>
-
-LIEN CV ICI
-LIEN CV ICI
-LIEN CV ICI
-LIEN CV ICI
-LIEN CV ICI
-
-            <a href="assets/cv.pdf" target="_blank" class="btn">Télécharger mon CV</a>
+            <h2 class="section-title">Tableau de Synthèse</h2>
+            <p>Ce document récapitule les compétences acquises durant ma formation et mes stages.</p>
+            <div class="synthese-box">
+                <a href="./docs/tableau_de_synthese.pdf" target="_blank" class="btn-doc">
+                    Visualiser le Tableau de Synthèse (PDF)
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="competences" class="section bg-alt">
+    <section id="realisations" class="section">
         <div class="container">
-            <h2 class="section-title">Mes Compétences</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Réseau</h3>
-                    <p>Routage, Switching (Cisco), VLAN, Pare-feu (pfSense).</p>
+            <h2 class="section-title">Réalisations Professionnelles</h2>
+            
+            <h3>Stages en entreprise</h3>
+            <div class="grid">
+                <div class="card reveal">
+                    <div class="card-img" style="background-image: url('./Image/stage1.jpg');"></div>
+                    <div class="card-body">
+                        <h4>Migration Windows Server 2022</h4>
+                        <p>Migration des rôles AD, DNS et DHCP vers un nouveau serveur. Mise en place de GPO de sécurité.</p>
+                        <a href="#procedures" class="link">Voir la doc →</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Système</h3>
-                    <p>Windows Server (AD, DNS, DHCP), Linux (Debian), Proxmox.</p>
-                </div>
-                <div class="card">
-                    <h3>Services</h3>
-                    <p>Supervision (Zabbix), Ticketing (GLPI), Scripts Bash/PowerShell.</p>
+            </div>
+
+            <h3 class="mt-4">Projets en formation (PPE / TP)</h3>
+            <div class="grid">
+                <div class="card reveal">
+                    <div class="card-img" style="background-image: url('./Image/tp1.jpg');"></div>
+                    <div class="card-body">
+                        <h4>Déploiement Proxmox & VLANs</h4>
+                        <p>Installation d'un hyperviseur Proxmox et segmentation réseau via des VLANs sur commutateur Cisco.</p>
+                        <a href="#procedures" class="link">Détails techniques →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projets" class="section">
+    <section id="procedures" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Mes Projets</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Déploiement Active Directory</h3>
-                    <p>Mise en place d'un contrôleur de domaine, création d'utilisateurs via script, et gestion des GPO pour sécuriser le parc informatique.</p>
-                </div>
-                <div class="card">
-                    <h3>Segmentation Réseau</h3>
-                    <p>Configuration de commutateurs pour séparer les flux de l'entreprise (VLAN) et mise en place d'un portail captif pour le Wi-Fi invité.</p>
-                </div>
+            <h2 class="section-title text-center">Procédures & Documentation</h2>
+            <div class="doc-list">
+                <a href="./docs/proc_glpi.pdf" target="_blank" class="doc-item">
+                    <span>📄 Installation et configuration de GLPI</span>
+                    <span class="badge">SISR</span>
+                </a>
+                <a href="./docs/proc_vpn.pdf" target="_blank" class="doc-item">
+                    <span>📄 Mise en place d'un tunnel VPN IPsec (pfSense)</span>
+                    <span class="badge">Sécurité</span>
+                </a>
+                <a href="./docs/proc_zabbix.pdf" target="_blank" class="doc-item">
+                    <span>📄 Supervision réseau avec Zabbix</span>
+                    <span class="badge">Monitoring</span>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <section id="procedures" class="section bg-alt">
-        <div class="container">
-            <h2 class="section-title">Mes Procédures & Documentations</h2>
-            <p class="text-center mb-2">En SISR, une tâche non documentée est une tâche inachevée. Voici quelques procédures rédigées lors de mes TP et stages :</p>
-            <ul class="doc-list">
-
-LIEN POUR LES PROCEDURE ICI
-LIEN POUR LES PROCEDURE ICI
-LIEN POUR LES PROCEDURE ICI
-LIEN POUR LES PROCEDURE ICI
-LIEN POUR LES PROCEDURE ICI
-                <li><a href="#">📄 Procédure d'installation de Zabbix sur Debian 12</a></li>
-                <li><a href="#">📄 Guide de configuration d'un tunnel VPN IPsec</a></li>
-                <li><a href="#">📄 Script de sauvegarde automatisée (Bash)</a></li>
-            </ul>
         </div>
     </section>
 
     <section id="veille" class="section">
         <div class="container">
             <h2 class="section-title">Veille Technologique</h2>
-            <div class="card">
-                <h3>Thème : L'évolution des ransomwares et les solutions de sauvegarde immuable</h3>
-                <p>Dans le cadre de mon BTS, j'étudie les nouvelles menaces cryptographiques et comment les entreprises se protègent grâce à des sauvegardes déconnectées (Air-Gap) et immuables.</p>
+            <p class="mb-2">Ma veille porte principalement sur l'évolution de la <strong>Cybersécurité Zero Trust</strong> et l'<strong>Automatisation (Ansible/Docker)</strong>.</p>
+            <div class="grid">
+                <div class="card reveal">
+                    <div class="card-body">
+                        <h4>Outils de veille utilisés</h4>
+                        <ul>
+                            <li>Flux RSS (Le Monde Informatique, ZDNet)</li>
+                            <li>Podcasts : NoLimitSecu</li>
+                            <li>Plateformes : Feedly, LinkedIn Learning</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-alt">
-        <div class="container text-center">
-            <h2 class="section-title">Contact</h2>
-            <p>N'hésitez pas à me contacter pour une opportunité d'alternance ou d'emploi.</p>
-            <p>Email : <a href="mailto:ton.email@domaine.fr" class="highlight">ton.email@domaine.fr</a></p>
-            <p>LinkedIn : <a href="#" target="_blank" class="highlight">Mon Profil LinkedIn</a></p>
-        </div>
-    </section>
-
     <footer>
-        <p>© 2026 - Portfolio créé de A à Z par [Ton Nom] - BTS SIO SISR</p>
+        <p>&copy; 2024 - Prénom Nom | Portfolio SISR</p>
     </footer>
+
+    <button id="back-to-top" title="Retour en haut">↑</button>
 
     <script src="script.js"></script>
 </body>
