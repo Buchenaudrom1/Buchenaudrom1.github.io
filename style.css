@@ -101,7 +101,7 @@ body {
    ========================================================================== */
 .main-content {
     margin-left: var(--sidebar-width);
-    padding: 4rem;
+    padding: 2rem 4rem;
     min-height: 100vh;
 }
 
@@ -110,12 +110,23 @@ body {
     margin: 0 auto;
 }
 
-section { margin-bottom: 6rem; }
+section { 
+    padding: 4rem 0; /* Espace en haut et en bas de chaque section */
+}
+
+/* Ligne de séparation entre les sections */
+.section-divider {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .section-title {
     font-size: 2.2rem;
     color: var(--text-main);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
@@ -125,19 +136,72 @@ section { margin-bottom: 6rem; }
 }
 
 /* ==========================================================================
-   HERO (PRÉSENTATION) & ESPACES IMAGES
+   PRÉSENTATION (Accueil sans photo)
    ========================================================================== */
-.hero-split {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+.hero-text {
+    max-width: 800px; /* Limite la largeur pour que le texte soit agréable à lire */
 }
 
-.hero-text { flex: 1; }
-.hero-image { flex: 1; display: flex; justify-content: center; }
+.presentation-content p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
 
-/* Les emplacements pour tes futures images */
+/* ==========================================================================
+   TABLEAU DE SYNTHÈSE INTÉGRÉ
+   ========================================================================== */
+.table-responsive {
+    overflow-x: auto; /* Permet de scroller le tableau sur mobile */
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.synthesis-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.synthesis-table th, 
+.synthesis-table td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.synthesis-table th {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.synthesis-table tbody tr:hover {
+    background-color: var(--bg-body);
+}
+
+.synthesis-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   RÉALISATIONS (STAGES)
+   ========================================================================== */
+.stage-block h3 {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.stage-intro {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+/* Emplacements pour tes futures images */
 .image-placeholder {
     background-color: #f1f5f9;
     border: 2px dashed #cbd5e1;
@@ -149,25 +213,16 @@ section { margin-bottom: 6rem; }
     text-align: center;
 }
 
-.profile-placeholder {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-}
-
 .project-placeholder {
     height: 200px;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: none;
 }
 
-/* Pour mettre une vraie image plus tard, tu feras :
-   background-image: url('./Image/ta-photo.jpg'); background-size: cover; border:none; */
-
 /* ==========================================================================
    BOUTONS
    ========================================================================== */
-.hero-btns { display: flex; gap: 1rem; margin-top: 2rem; }
+.hero-btns { display: flex; gap: 1rem; margin-top: 2.5rem; }
 
 .btn {
     display: inline-flex;
@@ -177,12 +232,14 @@ section { margin-bottom: 6rem; }
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary { background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
-.btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
 .btn-outline:hover { background: var(--primary-light); }
 
 /* ==========================================================================
@@ -192,7 +249,6 @@ section { margin-bottom: 6rem; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin-top: 1.5rem;
 }
 
 .card {
@@ -212,11 +268,11 @@ section { margin-bottom: 6rem; }
 .link:hover { text-decoration: underline; }
 
 /* ==========================================================================
-   NOUVEAU DESIGN : CARTES DE PROCÉDURES (Basé sur ton image)
+   CARTES DE PROCÉDURES (Agencement Modern Card)
    ========================================================================== */
 .proc-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Rendu plus compact pour afficher plus de cartes */
     gap: 1.5rem;
 }
 
@@ -239,7 +295,6 @@ section { margin-bottom: 6rem; }
     border-color: var(--primary);
 }
 
-/* En-tête de la carte (Icône + Catégorie + Flèche) */
 .proc-header {
     display: flex;
     justify-content: space-between;
@@ -264,7 +319,6 @@ section { margin-bottom: 6rem; }
     border: 1px solid var(--border-color);
 }
 
-/* La petite flèche en haut à droite */
 .proc-arrow {
     width: 35px;
     height: 35px;
@@ -285,14 +339,12 @@ section { margin-bottom: 6rem; }
     border-color: var(--primary);
 }
 
-/* Titre de la procédure */
 .proc-title {
     color: var(--text-main);
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     margin: 0;
 }
 
-/* Les petits badges / tags en bas */
 .proc-tags {
     display: flex;
     flex-wrap: wrap;
@@ -316,8 +368,7 @@ section { margin-bottom: 6rem; }
     .sidebar { width: 100%; height: auto; position: relative; padding: 1rem; border-right: none; border-bottom: 1px solid var(--border-color); }
     .sidebar-brand { margin-bottom: 1rem; }
     .sidebar-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .main-content { margin-left: 0; padding: 2rem 1.5rem; }
-    .hero-split { flex-direction: column-reverse; text-align: center; gap: 2rem; }
-    .hero-btns { justify-content: center; }
+    .main-content { margin-left: 0; padding: 1rem 1.5rem; }
+    .hero-btns { justify-content: center; flex-wrap: wrap; }
     .proc-grid { grid-template-columns: 1fr; }
 }
