@@ -192,60 +192,38 @@
 </section>
         <hr class="section-divider">
 
-<section id="synthese-doc">
+
+
+
+
+        
+<section id="document-viewer">
     <div class="container">
-        <h2 class="section-title">Tableau de Synthèse des Procédures</h2>
-        <p class="section-subtitle">Cliquez sur le document pour l'ouvrir en plein écran</p>
+        <h2 class="section-title">Focus sur une Réalisation : Sauvegarde Veeam</h2>
+        <p class="section-subtitle">Consultez la documentation complète directement ci-dessous</p>
 
-        <a href="./docs/Tableau_Synthese_Buchenaud.pdf" target="_blank" class="document-link">
-            <div class="document-viewer">
-                <div class="sheet-header">
-                    <div class="sheet-tab active">Inventaire des Compétences SISR</div>
-                </div>
-                
-                <div class="table-wrapper">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Catégorie</th>
-                                <th>Nom de la Procédure</th>
-                                <th>État</th>
-                                <th>Détails / Documentation</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="category-row"><td colspan="4">Réseau & Système</td></tr>
-                            <tr><td>Infrastructure</td><td>Routage CISCO (RIPv2, VLAN, SSH)</td><td><span class="status-doc success">Terminé</span></td><td>Procedure DNS DHCP cisco / Procedure router</td></tr>
-                            <tr><td>Infrastructure</td><td>Switching CISCO</td><td><span class="status-doc success">Terminé</span></td><td>Procedure switch cisco / Procedure SSH cisco</td></tr>
-                            <tr><td>Web</td><td>Apache & FTPS</td><td><span class="status-doc success">Terminé</span></td><td>TLS & FTPS (Apache TLS.pdf)</td></tr>
-                            <tr><td>DNS</td><td>Bind9</td><td><span class="status-doc success">Terminé</span></td><td>Config avancée (Bind9.pdf)</td></tr>
-                            <tr><td>Annuaire</td><td>OpenLDAP</td><td><span class="status-doc success">Terminé</span></td><td>Installation Annuaire (TP_OpenLDAP_2025.pdf)</td></tr>
-                            <tr><td>Annuaire</td><td>Samba 4</td><td><span class="status-doc success">Terminé</span></td><td>Contrôleur de domaine (TP_Samba_4.pdf)</td></tr>
-                            <tr><td>IP</td><td>IPv6 & DHCPv6</td><td><span class="status-doc success">Terminé</span></td><td>QCM & Pratique (IPv6-DHCPv6.pdf)</td></tr>
-                            <tr><td>BDD</td><td>MariaDB</td><td><span class="status-doc success">Terminé</span></td><td>Architecture 3-tiers (LAMP)</td></tr>
-                            <tr><td>Mail</td><td>Postfix</td><td><span class="status-doc success">Terminé</span></td><td>Procedure Postfix MAIL</td></tr>
-                            <tr><td>Disponibilité</td><td>HAproxy</td><td><span class="status-doc success">Terminé</span></td><td>Répartition de charge (HAproxy.pdf)</td></tr>
-                            <tr><td>Sécurité AD</td><td>Active Directory</td><td><span class="status-doc warning">À refaire</span></td><td>GPO et gestion des utilisateurs</td></tr>
-                            <tr><td>Fichiers</td><td>ProFTP</td><td><span class="status-doc warning">À refaire</span></td><td>TP - Le serveur ProFTP.pdf</td></tr>
-                            <tr><td>Autres</td><td>DHCP / Docker / NGinx / SFTP</td><td><span class="status-doc error">Manquante</span></td><td>En cours de formation</td></tr>
+        <div class="viewer-container">
+            <iframe 
+                src="./docs/Procedure_Veeam_Backup.pdf#view=FitH" 
+                width="100%" 
+                height="800px" 
+                frameborder="0">
+            </iframe>
 
-                            <tr class="category-row"><td colspan="4">CyberSécurité</td></tr>
-                            <tr><td>Filtrage</td><td>ACL (Access Control Lists)</td><td><span class="status-doc success">Terminé</span></td><td>Procedure ACL</td></tr>
-                            <tr><td>Protection</td><td>DDOS & DOS</td><td><span class="status-doc success">Terminé</span></td><td>Sécurité Couche 4 (DDos & Dos).pdf</td></tr>
-                            <tr><td>Protection</td><td>DHCP Snooping</td><td><span class="status-doc success">Terminé</span></td><td>Sécurisation switch (DHCP snooping.docx)</td></tr>
-                            <tr><td>Analyse</td><td>MITM & SSH</td><td><span class="status-doc success">Terminé</span></td><td>Attaques & Contre-mesures SSH</td></tr>
-                            <tr><td>Passerelle</td><td>NAT / PAT</td><td><span class="status-doc success">Terminé</span></td><td>Procedure NAT / PAT</td></tr>
-                            <tr><td>Intégrité</td><td>Somme de contrôle (Hash)</td><td><span class="status-doc success">Terminé</span></td><td>TP intégrité ressource (Buchenaud.pdf)</td></tr>
-                            <tr><td>Routage</td><td>RIP v2</td><td><span class="status-doc success">Terminé</span></td><td>Configuration de base RIPv2.pdf</td></tr>
-                            <tr><td>Sécurité</td><td>Port Security / ARP / Spoofing</td><td><span class="status-doc error">Manquante</span></td><td>Prochaines sessions TP</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="viewer-footer">
+                <p>Le document ne s'affiche pas ?</p>
+                <a href="./docs/Procedure_Veeam_Backup.pdf" target="_blank" class="btn-open-new">
+                    Ouvrir dans un nouvel onglet ↗
+                </a>
             </div>
-        </a>
+        </div>
     </div>
 </section>
 
+
+
+
+        
         <section id="certifications">
             <div class="container">
                 <h2 class="section-title">Certifications & Formations</h2>
