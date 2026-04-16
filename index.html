@@ -1,4 +1,47 @@
-<section id="synthese">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Prénom Nom - BTS SIO SISR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">PN <span>SISR</span></div>
+        <ul class="sidebar-nav">
+            <li><a href="#presentation" class="active">🏠 Présentation</a></li>
+            <li><a href="#synthese">📋 Synthèse</a></li>
+            <li><a href="#realisations">💼 Réalisations</a></li>
+            <li><a href="#procedures">📁 Procédures</a></li>
+            <li><a href="#veille">🌐 Veille</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="presentation">
+            <div class="container hero-text">
+                <h1 class="section-title">Bonjour, je suis <br><span>Prénom Nom</span></h1>
+                <p class="section-subtitle">Étudiant en BTS SIO option SISR (Solutions d'Infrastructure, Systèmes et Réseaux).</p>
+                
+                <div class="presentation-content">
+                    <p>Passionné par l'informatique depuis mon plus jeune âge, j'ai décidé de m'orienter vers l'administration systèmes et réseaux. Au cours de mes deux années de formation et de mes expériences en entreprise, j'ai développé de solides compétences en déploiement d'infrastructures, en virtualisation et en cybersécurité.</p>
+                    <p>Ce portfolio retrace mon parcours, mes réalisations professionnelles et ma documentation technique en vue de l'épreuve E6.</p>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#realisations" class="btn btn-primary">Voir mes projets</a>
+                    <a href="./docs/CV.pdf" target="_blank" class="btn btn-outline">Télécharger mon CV</a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="synthese">
             <div class="container">
                 <h2 class="section-title">Tableau de Synthèse</h2>
                 <p class="section-subtitle">Récapitulatif des compétences du référentiel SISR validées (Épreuve E4/E6).</p>
@@ -69,3 +112,130 @@
                 </div>
             </div>
         </section>
+
+        <hr class="section-divider">
+
+        <section id="realisations">
+            <div class="container">
+                <h2 class="section-title">Réalisations Professionnelles</h2>
+                <p class="section-subtitle">Missions réalisées lors de mes immersions en milieu professionnel.</p>
+                
+                <div class="stage-block">
+                    <h3>🏢 Stage de 1ère année : Nom de l'Entreprise A</h3>
+                    <p class="stage-intro">Lors de mon premier stage, d'une durée de 5 semaines, j'ai intégré le service informatique de l'entreprise "Nom Entreprise A". Mon rôle principal était d'assister les utilisateurs sur le support de niveau 1 et de réaliser un audit complet du parc informatique physique.</p>
+                    
+                    <div class="grid">
+                        <div class="card">
+                            <div class="image-placeholder project-placeholder">
+                                <span>📷 Photo de l'open-space ou matériel</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>Déploiement GLPI et Inventaire</h4>
+                                <p>Installation de la solution open-source GLPI sur un serveur Linux pour recenser l'ensemble du matériel.</p>
+                                <a href="#procedures" class="link">Voir la documentation →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage-block" style="margin-top: 4rem;">
+                    <h3>🏢 Stage de 2ème année : Nom de l'Entreprise B</h3>
+                    <p class="stage-intro">Mon second stage s'est déroulé chez "Nom Entreprise B" pendant 7 semaines. Les missions étaient plus orientées sur l'infrastructure. J'ai eu l'opportunité de travailler en autonomie sur un projet de migration de serveur.</p>
+                    
+                    <div class="grid">
+                        <div class="card">
+                            <div class="image-placeholder project-placeholder">
+                                <span>📷 Photo du rack serveur / interface</span>
+                            </div>
+                            <div class="card-content">
+                                <h4>Migration Windows Server 2022</h4>
+                                <p>Migration des rôles AD, DNS et DHCP vers un nouveau serveur. Mise en place de GPO de sécurité.</p>
+                                <a href="#procedures" class="link">Voir la documentation →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="procedures">
+            <div class="container">
+                <h2 class="section-title">Procédures & Documentation</h2>
+                <p class="section-subtitle">Retrouvez ci-dessous l'ensemble de mes documentations techniques (Mode opératoire).</p>
+                
+                <div class="proc-grid">
+                    <a href="./docs/apache.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category"><span class="proc-icon">🐧</span><span>LINUX</span></div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Apache TLS (HTTPS)</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Linux</span><span class="tag">Web</span><span class="tag">Sécurité</span>
+                        </div>
+                    </a>
+
+                    <a href="./docs/archi.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category"><span class="proc-icon">🗄️</span><span>ARCHITECTURE</span></div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Architecture 3 Tiers</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Web</span><span class="tag">Réseau</span><span class="tag">BDD</span>
+                        </div>
+                    </a>
+
+                    <a href="./docs/bind9.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category"><span class="proc-icon">🐧</span><span>LINUX</span></div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Config. de Bind9 (DNS Dynamique)</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Linux</span><span class="tag">DNS</span>
+                        </div>
+                    </a>
+
+                    <a href="./docs/ad.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category"><span class="proc-icon">🪟</span><span>WINDOWS</span></div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Configuration Active Directory</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Windows</span><span class="tag">AD DS</span><span class="tag">GPO</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="veille">
+            <div class="container">
+                <h2 class="section-title">Veille Technologique</h2>
+                <div class="card" style="padding: 2rem;">
+                    <p>Ma veille porte principalement sur l'évolution de la <strong>Cybersécurité Zero Trust</strong> et l'<strong>Automatisation des infrastructures (Ansible/Docker)</strong>.</p>
+                    <p>En tant que technicien SISR, il est crucial de suivre les nouvelles failles de sécurité (CVE) pour appliquer les correctifs le plus rapidement possible sur les serveurs de production.</p>
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Mes sources d'information :</h4>
+                    <ul style="margin-left: 1.5rem; color: var(--text-muted);">
+                        <li>Flux RSS (Le Mag IT, ZDNet, CERT-FR)</li>
+                        <li>Podcasts : NoLimitSecu, Underscore_</li>
+                        <li>Laboratoire de test sur machine virtuelle personnelle</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" title="Retour en haut">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
