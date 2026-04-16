@@ -732,33 +732,51 @@ section {
 
 /* ===================================================================== */
 /* ===================================================================== */
-/* STYLE POUR LA VISUALISATION DES DOCUMENTS (IFRAME)                   */
+/* STRUCTURE GLOBALE : ALIGNEMENT ET SCROLLBAR                          */
 /* ===================================================================== */
 /* ===================================================================== */
 
-.pdf-preview {
-    width: 100%;
-    height: 200px; /* Tu peux augmenter cette taille si tu veux voir plus du doc */
-    background-color: #f1f2f6;
-    border-radius: 6px;
-    margin: 15px 0;
-    overflow: hidden; /* Pour que l'iframe ne dépasse pas des bords arrondis */
-    border: 1px solid #dfe6e9;
+/* 1. Fixer le Menu latéral et ajouter une scrollbar interne */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Vérifie que c'est bien la largeur de ton menu */
+    height: 100vh;
+    background-color: #2d3436;
+    overflow-y: auto; /* Ajoute la barre de scroll si le menu est trop long */
+    z-index: 1000;
 }
 
-.pdf-preview iframe {
-    pointer-events: none; /* Empêche de scroller par erreur dans la petite fenêtre */
+/* 2. Décaler le contenu principal pour qu'il ne passe pas DESSOUS le menu */
+main, .main-content, #presentation, section {
+    margin-left: 250px; /* DOIT ÊTRE ÉGAL À LA LARGEUR DE LA SIDEBAR */
+    width: calc(100% - 250px);
+    transition: all 0.3s ease;
 }
 
-.btn-view-pdf {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: #0984e3;
-    text-decoration: none;
-    font-weight: bold;
+/* 3. Ajuster le haut (Header) pour qu'il ne cache pas le début des sections */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    /* Si ton header est fixé, assure-toi que les sections ont du padding-top */
 }
 
-.btn-view-pdf:hover {
-    text-decoration: underline;
+section {
+    padding: 80px 10% !important; /* Ajoute de l'espace en haut et sur les côtés */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 4. Style de la barre de scroll pour que ce soit plus "pro" */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #0984e3; /* Couleur bleue SISR */
+    border-radius: 10px;
 }
