@@ -421,100 +421,74 @@ section {
 }
 
 
-/* --- SECTION DOCUMENT (TABLEAU DE SYNTHÈSE) --- */
+/* ===================================================================== */
+/* ===================================================================== */
+/* SECTION : VISIONNEUSE GRAND FORMAT                    */
+/* ===================================================================== */
+/* ===================================================================== */
 
-#synthese-doc {
+#document-viewer {
     padding: 80px 0;
-    background-color: #f4f7f6;
+    background-color: #f4f7f6; /* Fond légèrement grisé pour faire ressortir le blanc du PDF */
 }
 
-.document-link {
-    text-decoration: none;
-    color: inherit;
+.viewer-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e8ed;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Style de l'iframe pour qu'elle soit propre */
+.viewer-container iframe {
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
     display: block;
 }
 
-/* Le conteneur du document */
-.document-viewer {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-    border: 1px solid #dcdde1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-height: 800px; /* Grand pour être lisible */
-    cursor: pointer;
-}
-
-.document-viewer:hover {
-    transform: scale(1.01);
-    box-shadow: 0 15px 40px rgba(9, 132, 227, 0.2);
-}
-
-/* Entête style Excel */
-.sheet-header {
-    background: #2d3436;
-    padding: 10px 20px 0 20px;
+/* Pied de la visionneuse avec le bouton de secours */
+.viewer-footer {
+    margin-top: 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
 }
 
-.sheet-tab {
-    background: #ffffff;
-    padding: 8px 25px;
-    border-radius: 8px 8px 0 0;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #0984e3;
+.viewer-footer p {
+    margin: 0;
+    color: #636e72;
+    font-size: 0.9rem;
 }
 
-/* Tableau stylé */
-.table-wrapper {
-    overflow-x: auto;
-    padding: 20px;
-}
-
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.95rem;
-}
-
-.styled-table thead tr {
+.btn-open-new {
     background-color: #0984e3;
-    color: #ffffff;
-    text-align: left;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
 }
 
-.styled-table th, .styled-table td {
-    padding: 12px 15px;
-    border: 1px solid #f1f2f6;
+.btn-open-new:hover {
+    background-color: #074b83;
 }
 
-.category-row {
-    background-color: #f1f2f6;
-    font-weight: 800;
-    color: #2d3436;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.8rem;
-}
-
-/* Couleurs des états */
-.status-doc {
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 4px;
-    text-transform: uppercase;
-}
-
-.status-doc.success { background: #e3fcef; color: #00b894; }
-.status-doc.warning { background: #fff4e5; color: #ff9f43; }
-.status-doc.error { background: #ffe5e5; color: #ee5253; }
-
-/* Responsive */
+/* Rendre la visionneuse responsive sur tablette/mobile */
 @media (max-width: 768px) {
-    .document-viewer { max-height: 500px; }
-    .styled-table { font-size: 0.8rem; }
+    .viewer-container iframe {
+        height: 500px; /* Plus petit sur mobile pour garder l'ergonomie */
+    }
+    .viewer-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
