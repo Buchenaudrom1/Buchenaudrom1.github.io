@@ -1,66 +1,32 @@
-// 1. GESTION DU MENU MOBILE (Optionnel selon besoins)
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. GESTION DU MENU ACTIF AU SCROLL
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".sidebar-nav a");
 
-// 2. SCROLL REVEAL ANIMATION
-// Cette fonction ajoute la classe 'active' aux éléments au fur et à mesure du scroll
-window.addEventListener('scroll', reveal);
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
+        // On parcourt chaque section pour voir si on est dessus
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            
+            // Le "- 150" permet d'activer le menu un peu avant que la section ne touche tout à fait le haut de l'écran
+            if (scrollY >= sectionTop - 150) {
+                current = section.getAttribute("id");
+            }
+        });
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        var revealPoint = 150;
-
-        if (revealTop < windowHeight - revealPoint) {
-            reveals[i].classList.add('active');
-        }
-    }
-}
-
-// 3. BOUTON RETOUR EN HAUT
-const backToTopBtn = document.querySelector("#back-to-top");
-
-window.onscroll = function() {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = "block";
-    } else {
-        backToTopBtn.style.display = "none";
-    }
-}
-
-backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        // On met à jour les liens du menu
+        navLinks.forEach((link) => {
+            // On enlève la couleur bleue de base sur tous les liens
+            link.classList.remove("active");
+            
+            // Si le lien correspond à la section actuelle, on lui ajoute la classe 'active'
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active");
+            }
+        });
     });
-});
 
-// 4. NAVIGATION ACTIVE LINK HIGHLIGHTING
-// Change la couleur du lien dans le menu en fonction de la section visible
-const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll("nav .nav-container ul li a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLi.forEach((a) => {
-    a.classList.remove("active");
-    if (a.getAttribute("href").includes(current)) {
-      a.classList.add("active");
-    }
-  });
 });
