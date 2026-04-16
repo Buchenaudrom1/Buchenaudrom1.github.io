@@ -611,64 +611,69 @@ section {
 
 /* ===================================================================== */
 /* ===================================================================== */
-/* SECTION : PROJECTS (NOUVEAU)                                          */
+/* SECTION : PROJECTS (IMAGE EN DESSOUS)                                */
 /* ===================================================================== */
 /* ===================================================================== */
 
 #projects {
     padding: 80px 0;
-    background-color: #ffffff; /* Fond blanc pour alterner avec les autres sections */
+    background-color: #ffffff;
 }
 
-.project-showcase {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+.project-box {
     background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
     border: 1px solid #e1e8ed;
-    margin-top: 30px;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.project-text {
-    flex: 1;
+.project-content-text {
+    margin-bottom: 30px;
+    text-align: center; /* Centre le texte pour un design épuré */
 }
 
-.project-text h3 {
+.project-content-text h3 {
     color: #0984e3;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
-.project-text p {
+.project-content-text p {
     color: #636e72;
     line-height: 1.8;
-    font-size: 1.05rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin: 0 auto 20px auto;
 }
 
-.project-image {
-    flex: 1;
+.project-content-image {
+    width: 100%;
     text-align: center;
 }
 
-.project-image img {
-    max-width: 100%;
+.project-content-image img {
+    width: 100%; /* L'image prend toute la largeur du bloc */
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-height: 500px; /* Évite que l'image soit trop géante */
+    object-fit: contain; /* Garde les proportions de l'image */
+    border-radius: 8px;
     border: 1px solid #dcdde1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Adaptabilité pour les écrans de téléphone */
-@media (max-width: 850px) {
-    .project-showcase {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .project-image {
-        order: -1; /* Met l'image au-dessus du texte sur mobile */
-    }
+.image-caption {
+    font-style: italic;
+    color: #b2bec3;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.project-tags {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
