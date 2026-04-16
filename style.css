@@ -727,3 +727,38 @@ section {
         padding: 10px;
     }
 }
+
+
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* STYLE POUR LA VISUALISATION DES DOCUMENTS (IFRAME)                   */
+/* ===================================================================== */
+/* ===================================================================== */
+
+.pdf-preview {
+    width: 100%;
+    height: 200px; /* Tu peux augmenter cette taille si tu veux voir plus du doc */
+    background-color: #f1f2f6;
+    border-radius: 6px;
+    margin: 15px 0;
+    overflow: hidden; /* Pour que l'iframe ne dépasse pas des bords arrondis */
+    border: 1px solid #dfe6e9;
+}
+
+.pdf-preview iframe {
+    pointer-events: none; /* Empêche de scroller par erreur dans la petite fenêtre */
+}
+
+.btn-view-pdf {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #0984e3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-view-pdf:hover {
+    text-decoration: underline;
+}
