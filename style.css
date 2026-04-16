@@ -1,34 +1,62 @@
-/* ==========================================================================
-   VARIABLES GLOBALES (Thème Clair - Design Professionnel SISR)
-   ========================================================================== */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Prénom Nom - BTS SIO SISR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-avatar"></div>
+            <h2 class="logo">PN <span>SISR</span></h2>
+            <p class="sidebar-role">Admin Réseaux</p>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#presentation" class="active">🏠 Présentation</a></li>
+            <li><a href="#synthese">📋 Synthèse</a></li>
+            <li><a href="#realisations">💼 Réalisations</a></li>
+            <li><a href="#procedures">📁 Procédures</a></li>
+            <li><a href="#veille">🌐 Veille</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <section id="presentation" class="hero-section">
+             ```
+*(N'oublie pas de fermer la balise `</main>` tout à la fin, juste avant le `<footer>` !)*
+
+---
+
+### 🎨 2. Le nouveau `style.css` (Pour le menu à gauche)
+
+Voici le CSS modifié. J'ai supprimé la barre du haut et créé une vraie *sidebar* qui prend toute la hauteur. Le contenu s'adapte automatiquement à côté.
+
+*(Remplace l'ancienne partie NAVBAR et ajoute la classe main-content, ou copie-colle ce bloc complet à la place du début de ton CSS)* :
+
+```css
+/* ============================================================== */
+/* VARIABLES THEME CLAIR (LIGHT MODE)                             */
+/* ============================================================== */
 :root {
-    /* Palette de couleurs */
-    --primary: #2563eb;         /* Bleu principal */
-    --primary-hover: #1d4ed8;   /* Bleu foncé (survol) */
-    --primary-light: #eff6ff;   /* Bleu très clair */
-    
-    --bg-body: #f8fafc;         /* Gris très clair (fond de la page) */
-    --bg-surface: #ffffff;      /* Blanc pur (menu, cartes) */
-    
-    --text-main: #1e293b;       /* Gris ardoise (texte principal) */
-    --text-muted: #64748b;      /* Gris moyen (sous-titres) */
-    --border-color: #e2e8f0;    /* Gris clair pour bordures */
-
-    /* Dimensions et espacements */
-    --sidebar-width: 280px;     /* Largeur fixe du menu de gauche */
-    --radius-md: 8px;           
-    --radius-lg: 12px;          
-
-    /* Ombres et Transitions */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --primary-color: #0066cc; 
+    --bg-main: #f4f7f6; /* Gris légèrement bleuté pour le fond */
+    --bg-alt: #ffffff; 
+    --sidebar-bg: #ffffff;
+    --text-dark: #2b2d42; 
+    --text-light: #6c757d; 
+    --sidebar-width: 260px; /* Largeur du menu à gauche */
+    --transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   RESET & CONFIGURATION DE BASE
-   ========================================================================== */
+/* ============================================================== */
+/* RESET ET RÉGLAGES DE BASE                                      */
+/* ============================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -40,302 +68,110 @@ html {
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    line-height: 1.6;
-    /* CORRECTION : Le display:flex a été supprimé ici pour éviter de casser tes sections */
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    display: flex; /* Permet de mettre la sidebar et le contenu côte à côte */
 }
 
-/* ==========================================================================
-   MENU DE NAVIGATION LATÉRAL (Sidebar)
-   ========================================================================== */
+/* ============================================================== */
+/* SIDEBAR (MENU GAUCHE)                                          */
+/* ============================================================== */
 .sidebar {
     width: var(--sidebar-width);
-    height: 100vh; 
-    position: fixed;
+    height: 100vh; /* Prend 100% de la hauteur de l'écran */
+    background-color: var(--sidebar-bg);
+    position: fixed; /* Reste figé quand on descend */
     top: 0;
     left: 0;
-    background-color: var(--bg-surface);
-    border-right: 1px solid var(--border-color);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+    border-right: 1px solid #e1e5ee;
     display: flex;
     flex-direction: column;
-    padding: 2rem 1.5rem;
+    padding: 30px 20px;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.03);
     z-index: 1000;
 }
 
-.sidebar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 2.5rem;
+.sidebar-header {
     text-align: center;
+    margin-bottom: 40px;
 }
 
-.sidebar-brand span {
-    color: var(--primary);
+.sidebar-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #d1d9e6;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    background-image: url('./Image/photo.jpg');
+    background-size: cover;
+    border: 3px solid #f4f7f6;
 }
 
-.sidebar-nav {
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.logo span { color: var(--primary-color); }
+
+.sidebar-role {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 10px;
 }
 
-.sidebar-nav a {
+.nav-links li a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--text-muted);
+    color: var(--text-light);
     font-weight: 500;
-    padding: 0.8rem 1rem;
-    border-radius: var(--radius-md);
+    padding: 12px 15px;
+    border-radius: 8px;
     transition: var(--transition);
-    border-left: 3px solid transparent;
 }
 
-.sidebar-nav a:hover {
-    background-color: var(--bg-body);
-    color: var(--primary);
-    transform: translateX(4px);
-}
-
-.sidebar-nav a.active {
-    background-color: var(--primary-light);
-    color: var(--primary);
-    border-left: 3px solid var(--primary);
+/* Effet au survol et quand la page est active */
+.nav-links li a:hover, 
+.nav-links li a.active {
+    background-color: #e8f0fe;
+    color: var(--primary-color);
     font-weight: 600;
+    transform: translateX(5px); /* Petit effet qui pousse vers la droite */
 }
 
-/* ==========================================================================
-   CONTENU PRINCIPAL & LAYOUT
-   ========================================================================== */
+/* ============================================================== */
+/* CONTENU PRINCIPAL (MAIN CONTENT)                               */
+/* ============================================================== */
 .main-content {
-    /* Pousse le contenu à droite du menu sans utiliser flexbox sur le body */
-    margin-left: var(--sidebar-width);
-    padding: 3rem;
-    min-height: 100vh;
-    display: block; /* Force les éléments à s'empiler de haut en bas */
+    flex: 1;
+    margin-left: var(--sidebar-width); /* Pousse le texte à droite du menu */
+    width: calc(100% - var(--sidebar-width));
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
-/* Styles des Sections */
-section {
-    padding-top: 3rem;
-    margin-bottom: 5rem;
-}
-
-.section-title {
-    font-size: 2.2rem;
-    color: var(--text-main);
-    margin-bottom: 2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: var(--primary);
-    border-radius: 2px;
-}
-
-/* ==========================================================================
-   COMPOSANTS : CARTES (Cards) & GRILLES
-   ========================================================================== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-.card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+/* On enlève le padding-top du .hero-section car on n'a plus de menu en haut */
+.hero-section {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-    border-color: #cbd5e1;
-}
-
-.card h3, .card h4 {
-    color: var(--text-main);
-    margin-bottom: 0.8rem;
-    font-size: 1.25rem;
-}
-
-.card p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-/* ==========================================================================
-   COMPOSANTS : BOUTONS & LIENS
-   ========================================================================== */
-.btn, .btn-doc {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.6rem 1.2rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: var(--radius-md);
-    transition: var(--transition);
-    cursor: pointer;
-    border: none;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    padding-top: 0;
 }
 
-.primary {
-    background-color: var(--primary);
-    color: white;
-    box-shadow: var(--shadow-sm);
-    margin-right: 10px;
-}
-
-.primary:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.secondary {
-    background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.secondary:hover {
-    background-color: var(--primary-light);
-}
-
-.link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-/* Liste de documents (Procédures) */
-.doc-item {
-    display: block;
-    background-color: var(--bg-surface);
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    color: var(--text-main);
-    text-decoration: none;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.doc-item:hover {
-    background-color: var(--primary-light);
-    border-color: var(--primary);
-    transform: translateX(5px);
-}
-
-/* ==========================================================================
-   BONUS : BOUTON RETOUR EN HAUT
-   ========================================================================== */
-#back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    box-shadow: var(--shadow-md);
-    cursor: pointer;
-    display: none; /* Ton JS s'occupera de l'afficher */
-    font-size: 1.2rem;
-    transition: var(--transition);
-    z-index: 1000;
-}
-
-#back-to-top:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN (Tablettes & Mobiles)
-   ========================================================================== */
-@media screen and (max-width: 900px) {
-    .sidebar {
-        width: 100%;
-        height: 70px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1.5rem;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .sidebar-brand {
-        margin-bottom: 0;
-        font-size: 1.2rem;
-    }
-
-    .sidebar-nav {
-        flex-direction: row;
-        gap: 1rem;
-        overflow-x: auto;
-        padding-bottom: 5px;
-    }
-
-    .sidebar-nav a {
-        padding: 0.5rem 0.8rem;
-        border-left: none;
-        border-bottom: 3px solid transparent;
-        white-space: nowrap;
-    }
-
-    .sidebar-nav a:hover {
-        transform: translateY(-2px);
-    }
-
-    .sidebar-nav a.active {
-        border-left: none;
-        border-bottom: 3px solid var(--primary);
-    }
-
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 2rem 1.5rem;
-        margin-top: 70px;
-    }
-}
+/* (Garde la suite de ton fichier CSS ici : Boutons, Grilles, Cartes, etc.) */
