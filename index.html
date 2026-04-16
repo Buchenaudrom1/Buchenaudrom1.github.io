@@ -226,20 +226,31 @@
         
 <section id="projects">
     <div class="container">
-        <h2 class="section-title"><span class="icon">🗄️</span> Mes Projets</h2>
+        <h2 class="section-title"><span class="icon">🗄️</span> Projets</h2>
         
         <div class="project-box">
             <div class="project-content-text">
                 <h3>Refonte de l'Infrastructure du Laboratoire GSB</h3>
                 <p>
                     Projet de refonte et de sécurisation d'une infrastructure réseau complète. Ce travail a 
-                    nécessité la mise en place d'un environnement virtualisé en cluster (Proxmox) et la 
-                    configuration avancée d'équipements Cisco (Routage et création de multiples VLANs).
+                    nécessité la mise en place d'un environnement virtualisé (Proxmox) et la 
+                    configuration d'équipements Cisco (Routage et création de multiples VLANs).
                 </p>
                 <p>
                     L'objectif principal était de déployer et d'interconnecter différents services critiques 
                     pour l'entreprise : domaine Active Directory (Windows Server), plateforme de gestion de 
                     parc (GLPI), serveurs de fichiers sécurisés, messagerie interne et serveur TFTP.
+                </p>
+                <p>
+                    Dans le cadre de ce projet, j'ai déployé un <strong>serveur TFTP</strong> centralisé pour automatiser 
+                    la récupération et la sauvegarde des configurations des switchs. Cette solution permet une 
+                    restauration rapide et un redéploiement simplifié des équipements en cas de panne ou de modification.
+                </p>
+                
+                <p>
+                    En complément, j'ai pris en charge la <strong>sécurisation des commutateurs de couche 2</strong> 
+                    (Layer 2 Security) afin de protéger l'infrastructure contre les accès non autorisés et de 
+                    garantir l'intégrité des communications au sein du réseau local.
                 </p>
             </div>
             
