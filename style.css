@@ -1,12 +1,164 @@
 /* ==========================================================================
-   TABLEAU DE SYNTHÈSE (Style Officiel & Professionnel)
+   VARIABLES GLOBALES (Thème Clair)
+   ========================================================================== */
+:root {
+    --primary: #2563eb;         
+    --primary-hover: #1d4ed8;   
+    --primary-light: #eff6ff;   
+    
+    --bg-body: #f8fafc;         
+    --bg-surface: #ffffff;      
+    
+    --text-main: #1e293b;       
+    --text-muted: #64748b;      
+    --border-color: #e2e8f0;    
+
+    --sidebar-width: 280px;     
+    --radius-md: 8px;           
+    --radius-lg: 12px;          
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   RESET & STRUCTURE DE BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   MENU DE NAVIGATION LATÉRAL (Sidebar)
+   ========================================================================== */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    z-index: 1000;
+}
+
+.sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+.sidebar-brand span { color: var(--primary); }
+
+.sidebar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--bg-body);
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+.sidebar-nav a.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   CONTENU PRINCIPAL
+   ========================================================================== */
+.main-content {
+    margin-left: var(--sidebar-width); /* C'est cette ligne qui pousse le contenu à droite du menu ! */
+    padding: 2rem 4rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section { 
+    padding: 4rem 0; 
+}
+
+/* Ligne de séparation entre les sections */
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    margin: 2rem auto;
+    width: 80%;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   PRÉSENTATION (Accueil)
+   ========================================================================== */
+.hero-text {
+    max-width: 800px;
+}
+
+.presentation-content p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   TABLEAU DE SYNTHÈSE INTÉGRÉ
    ========================================================================== */
 .table-container {
     background: var(--bg-surface);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    overflow-x: auto; /* Permet le scroll horizontal sur mobile */
+    overflow-x: auto; 
     margin-top: 2rem;
 }
 
@@ -14,10 +166,9 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
-    min-width: 700px; /* Assure que le tableau ne s'écrase pas trop */
+    min-width: 700px; 
 }
 
-/* En-tête du tableau */
 .synthesis-table th {
     background-color: var(--primary);
     color: #ffffff;
@@ -33,7 +184,6 @@
     width: 45%;
 }
 
-/* Style des cellules */
 .synthesis-table td {
     padding: 1rem 1.2rem;
     border-bottom: 1px solid var(--border-color);
@@ -45,10 +195,9 @@
     text-align: left;
     color: var(--text-main);
     font-weight: 500;
-    background-color: #fafbfc; /* Légère nuance pour la colonne compétence */
+    background-color: #fafbfc; 
 }
 
-/* Lignes de catégories (Domaines 1 à 6) */
 .row-category td {
     background-color: #f1f5f9 !important;
     color: var(--primary) !important;
@@ -59,10 +208,10 @@
     padding: 0.8rem 1.2rem !important;
 }
 
-/* Alternance de couleur pour la lecture (Zebra effect) */
 .synthesis-table tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
+
 .synthesis-table tbody tr:hover {
     background-color: var(--primary-light);
 }
@@ -74,12 +223,188 @@
 }
 
 /* ==========================================================================
-   SÉPARATEURS DE SECTION (Traits sur la page)
+   RÉALISATIONS (STAGES)
    ========================================================================== */
-.section-divider {
+.stage-block h3 {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.stage-intro {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+/* Emplacements d'images grisés */
+.image-placeholder {
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: 500;
+    text-align: center;
+}
+
+.project-placeholder {
+    height: 200px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   BOUTONS
+   ========================================================================== */
+.hero-btns { display: flex; gap: 1rem; margin-top: 2.5rem; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
     border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
-    margin: 2rem auto;
-    width: 80%;
+    cursor: pointer;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+.btn-outline:hover { background: var(--primary-light); }
+
+/* ==========================================================================
+   PROJETS (CARTES CLASSIQUES)
+   ========================================================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content { padding: 1.5rem; }
+.card-content h4 { margin-bottom: 0.8rem; font-size: 1.2rem; }
+.card-content p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.link { color: var(--primary); text-decoration: none; font-weight: 600; }
+.link:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   CARTES DE PROCÉDURES (Agencement Modern Card)
+   ========================================================================== */
+.proc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 1.5rem;
+}
+
+.proc-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.proc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary);
+}
+
+.proc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proc-category {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.proc-icon {
+    background: var(--bg-body);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+}
+
+.proc-arrow {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--bg-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.proc-card:hover .proc-arrow {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.proc-title {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.proc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-muted);
+    font-weight: 600;
+    background: var(--bg-surface);
+}
+
+/* ==========================================================================
+   RESPONSIVE (Mobiles)
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    .sidebar { width: 100%; height: auto; position: relative; padding: 1rem; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .sidebar-brand { margin-bottom: 1rem; }
+    .sidebar-nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .main-content { margin-left: 0; padding: 1rem 1.5rem; }
+    .hero-btns { justify-content: center; flex-wrap: wrap; }
+    .proc-grid { grid-template-columns: 1fr; }
 }
