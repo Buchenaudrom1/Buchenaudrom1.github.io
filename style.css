@@ -534,103 +534,82 @@ section {
 }
 
 
-/* =========================================
-   SECTION PROCÉDURES (COMPACTE & 2 COLONNES)
-========================================= */
-
+/* --- SECTION PROCÉDURES COMPACTE --- */
 #procedures {
     padding: 60px 0;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
 }
 
-/* Layout principal en 2 colonnes */
 .procedures-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
-    gap: 3rem;
-    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes Réseau/Cyber */
+    gap: 2.5rem;
 }
 
 .column-title {
     color: #2d3436;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
     border-bottom: 2px solid #0984e3;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    padding-bottom: 8px;
 }
 
-/* Grille interne pour les petites cartes (1 colonne par défaut dans chaque grande colonne) */
 .proc-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
-/* Cartes compactes */
+/* Cartes plus petites pour gagner de la place */
 .proc-card {
-    background-color: #f8f9fa;
+    background: #ffffff;
     border: 1px solid #e1e8ed;
     border-left: 4px solid #0984e3;
     border-radius: 8px;
-    padding: 1rem 1.2rem; /* Padding réduit pour gain de place */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
 }
 
 .proc-card:hover {
     transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.1);
-    border-color: #0984e3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Contenu des cartes */
-.proc-content h4 {
+.proc-card h4 {
+    font-size: 1.05rem;
+    margin: 5px 0;
     color: #2d3436;
-    font-size: 1.1rem;
-    margin: 0.4rem 0;
 }
 
-.proc-content p {
+.proc-card p {
+    font-size: 0.85rem;
     color: #636e72;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
+    margin-bottom: 8px;
 }
 
-/* Étiquette (Tag) Terminé */
-.status-tag.success {
-    display: inline-block;
-    background-color: #e3fcef;
-    color: #00b894;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+/* Étiquettes d'état */
+.status-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 
-/* Bouton lien (Plus discret) */
+.status-tag.success { background: #e3fcef; color: #00b894; } /* Terminé */
+.status-tag.warning { background: #fff4e5; color: #ff9f43; } /* À refaire */
+.status-tag.error { background: #ffe5e5; color: #ee5253; }   /* Manquante */
+
 .btn-link {
-    display: inline-block;
+    font-size: 0.8rem;
     color: #0984e3;
-    font-size: 0.85rem;
-    font-weight: 600;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: 600;
 }
 
-.btn-link:hover {
-    color: #074b83;
-    text-decoration: underline;
-}
+.btn-link:hover { text-decoration: underline; }
 
-/* Adaptation pour les mobiles (Passe en 1 seule colonne) */
-@media (max-width: 900px) {
-    .procedures-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+/* Mobile */
+@media (max-width: 850px) {
+    .procedures-layout { grid-template-columns: 1fr; }
 }
