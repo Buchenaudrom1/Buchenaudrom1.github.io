@@ -192,59 +192,102 @@
 </section>
         <hr class="section-divider">
 
-        <section id="procedures">
-            <div class="container">
-                <h2 class="section-title">Procédures & Documentation</h2>
-                <p class="section-subtitle">Retrouvez ci-dessous l'ensemble de mes documentations techniques (Mode opératoire).</p>
-                
+<section id="procedures">
+    <div class="container">
+        <h2 class="section-title">Mes Procédures & Travaux Pratiques</h2>
+        <p class="section-subtitle">Documentations techniques réalisées lors de ma formation</p>
+
+        <div class="procedures-layout">
+            
+            <div class="proc-column">
+                <h3 class="column-title"><span class="icon">🌐</span> Réseau & Infrastructure</h3>
                 <div class="proc-grid">
-                    <a href="./docs/apache.pdf" target="_blank" class="proc-card">
-                        <div class="proc-header">
-                            <div class="proc-category"><span class="proc-icon">🐧</span><span>LINUX</span></div>
-                            <div class="proc-arrow">↗</div>
+                    
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Routage & Switching CISCO</h4>
+                            <p>Configuration RIPv2, VLANs, et sécurisation des équipements.</p>
+                            <a href="./docs/Procedure-Routage-Cisco.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
                         </div>
-                        <h4 class="proc-title">Apache TLS (HTTPS)</h4>
-                        <div class="proc-tags">
-                            <span class="tag">Linux</span><span class="tag">Web</span><span class="tag">Sécurité</span>
-                        </div>
-                    </a>
+                    </div>
 
-                    <a href="./docs/archi.pdf" target="_blank" class="proc-card">
-                        <div class="proc-header">
-                            <div class="proc-category"><span class="proc-icon">🗄️</span><span>ARCHITECTURE</span></div>
-                            <div class="proc-arrow">↗</div>
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Serveurs Web & BDD</h4>
+                            <p>Mise en place d'Apache (TLS/HTTPS), FTPS et MariaDB (Architecture 3-tiers).</p>
+                            <a href="./docs/Apache_TLS.pdf" target="_blank" class="btn-link">📄 Voir la procédure</a>
                         </div>
-                        <h4 class="proc-title">Architecture 3 Tiers</h4>
-                        <div class="proc-tags">
-                            <span class="tag">Web</span><span class="tag">Réseau</span><span class="tag">BDD</span>
-                        </div>
-                    </a>
+                    </div>
 
-                    <a href="./docs/bind9.pdf" target="_blank" class="proc-card">
-                        <div class="proc-header">
-                            <div class="proc-category"><span class="proc-icon">🐧</span><span>LINUX</span></div>
-                            <div class="proc-arrow">↗</div>
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Services d'Annuaire</h4>
+                            <p>Déploiement et configuration d'OpenLDAP et de Samba 4 en contrôleur de domaine.</p>
+                            <a href="./docs/TP_OpenLDAP_2025.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
                         </div>
-                        <h4 class="proc-title">Config. de Bind9 (DNS Dynamique)</h4>
-                        <div class="proc-tags">
-                            <span class="tag">Linux</span><span class="tag">DNS</span>
-                        </div>
-                    </a>
+                    </div>
 
-                    <a href="./docs/ad.pdf" target="_blank" class="proc-card">
-                        <div class="proc-header">
-                            <div class="proc-category"><span class="proc-icon">🪟</span><span>WINDOWS</span></div>
-                            <div class="proc-arrow">↗</div>
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Services & Répartition</h4>
+                            <p>Configuration de serveurs DNS (Bind9), DHCPv6 et répartition de charge (HAproxy).</p>
+                            <a href="./docs/Repartition_charge_HAproxy.pdf" target="_blank" class="btn-link">📄 Voir la procédure</a>
                         </div>
-                        <h4 class="proc-title">Configuration Active Directory</h4>
-                        <div class="proc-tags">
-                            <span class="tag">Windows</span><span class="tag">AD DS</span><span class="tag">GPO</span>
-                        </div>
-                    </a>
+                    </div>
+
                 </div>
             </div>
-        </section>
 
+            <div class="proc-column">
+                <h3 class="column-title"><span class="icon">🛡️</span> Cybersécurité</h3>
+                <div class="proc-grid">
+
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Attaques MITM & SSH</h4>
+                            <p>Analyse d'attaque Man-In-The-Middle, implémentation de contre-mesures et bonnes pratiques SSH.</p>
+                            <a href="./docs/activite_mitm_ssh.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
+                        </div>
+                    </div>
+
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Sécurité Couche 2 & 3</h4>
+                            <p>Mise en place de DHCP Snooping et de listes de contrôle d'accès (ACL) sur équipements Cisco.</p>
+                            <a href="./docs/DHCP_snooping.pdf" target="_blank" class="btn-link">📄 Voir la procédure</a>
+                        </div>
+                    </div>
+
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Déni de Service (DDoS)</h4>
+                            <p>Analyse de la sécurité en Couche 4, tests de montée en charge et protection contre les attaques DoS.</p>
+                            <a href="./docs/Compte_rendu_TP_DDoS.pdf" target="_blank" class="btn-link">📄 Voir le TP</a>
+                        </div>
+                    </div>
+
+                    <div class="proc-card">
+                        <div class="proc-content">
+                            <span class="status-tag success">Terminé</span>
+                            <h4>Intégrité des Données</h4>
+                            <p>Vérification des sommes de contrôle (Hashes) pour garantir l'intégrité des ressources informatiques.</p>
+                            <a href="./docs/TP_integrite_ressource.pdf" target="_blank" class="btn-link">📄 Voir la procédure</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
         <hr class="section-divider">
 
         <section id="certifications">
