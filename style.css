@@ -606,3 +606,69 @@ section {
     width: 50%;
     border-radius: 5px;
 }
+
+
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* SECTION : PROJECTS (NOUVEAU)                                          */
+/* ===================================================================== */
+/* ===================================================================== */
+
+#projects {
+    padding: 80px 0;
+    background-color: #ffffff; /* Fond blanc pour alterner avec les autres sections */
+}
+
+.project-showcase {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e1e8ed;
+    margin-top: 30px;
+}
+
+.project-text {
+    flex: 1;
+}
+
+.project-text h3 {
+    color: #0984e3;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.project-text p {
+    color: #636e72;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    flex: 1;
+    text-align: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid #dcdde1;
+}
+
+/* Adaptabilité pour les écrans de téléphone */
+@media (max-width: 850px) {
+    .project-showcase {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .project-image {
+        order: -1; /* Met l'image au-dessus du texte sur mobile */
+    }
+}
