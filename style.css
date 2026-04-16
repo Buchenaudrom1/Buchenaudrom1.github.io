@@ -532,3 +532,105 @@ section {
     width: 50%;
     border-radius: 5px;
 }
+
+
+/* =========================================
+   SECTION PROCÉDURES (COMPACTE & 2 COLONNES)
+========================================= */
+
+#procedures {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+/* Layout principal en 2 colonnes */
+.procedures-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.column-title {
+    color: #2d3436;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #0984e3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Grille interne pour les petites cartes (1 colonne par défaut dans chaque grande colonne) */
+.proc-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Cartes compactes */
+.proc-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e1e8ed;
+    border-left: 4px solid #0984e3;
+    border-radius: 8px;
+    padding: 1rem 1.2rem; /* Padding réduit pour gain de place */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proc-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.1);
+    border-color: #0984e3;
+}
+
+/* Contenu des cartes */
+.proc-content h4 {
+    color: #2d3436;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+}
+
+.proc-content p {
+    color: #636e72;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* Étiquette (Tag) Terminé */
+.status-tag.success {
+    display: inline-block;
+    background-color: #e3fcef;
+    color: #00b894;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Bouton lien (Plus discret) */
+.btn-link {
+    display: inline-block;
+    color: #0984e3;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-link:hover {
+    color: #074b83;
+    text-decoration: underline;
+}
+
+/* Adaptation pour les mobiles (Passe en 1 seule colonne) */
+@media (max-width: 900px) {
+    .procedures-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
