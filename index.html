@@ -4,129 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Prénom Nom - BTS SIO SISR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">PN <span>SISR</span></div>
-            <ul class="nav-links">
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#synthese">Synthèse</a></li>
-                <li><a href="#realisations">Réalisations</a></li>
-                <li><a href="#procedures">Procédures</a></li>
-                <li><a href="#veille">Veille</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <aside class="sidebar">
+        <div class="sidebar-brand">PN <span>SISR</span></div>
+        <ul class="sidebar-nav">
+            <li><a href="#presentation" class="active">🏠 Présentation</a></li>
+            <li><a href="#synthese">📋 Synthèse</a></li>
+            <li><a href="#realisations">💼 Réalisations</a></li>
+            <li><a href="#procedures">📁 Procédures</a></li>
+            <li><a href="#veille">🌐 Veille</a></li>
+        </ul>
+    </aside>
 
-    <section id="presentation" class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Bonjour, je suis <span>Prénom Nom</span></h1>
-                <p>Étudiant en BTS SIO option SISR. Passionné par l'administration réseaux, la virtualisation et la cybersécurité.</p>
-                <div class="hero-btns">
-                    <a href="#realisations" class="btn primary">Voir mes projets</a>
-                    <a href="./docs/CV.pdf" target="_blank" class="btn secondary">Télécharger mon CV</a>
+    <main class="main-content">
+
+        <section id="presentation">
+            <div class="container hero-split">
+                <div class="hero-text">
+                    <h1 class="section-title">Bonjour, je suis <br><span>Prénom Nom</span></h1>
+                    <p class="section-subtitle">Étudiant en BTS SIO option SISR. Passionné par l'administration réseaux, la virtualisation et la cybersécurité.</p>
+                    <div class="hero-btns">
+                        <a href="#realisations" class="btn btn-primary">Voir mes projets</a>
+                        <a href="./docs/CV.pdf" target="_blank" class="btn btn-outline">Télécharger mon CV</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="synthese" class="section bg-light">
-        <div class="container text-center">
-            <h2 class="section-title">Tableau de Synthèse</h2>
-            <p>Ce document récapitule les compétences acquises durant ma formation et mes stages.</p>
-            <div class="synthese-box">
-                <a href="./docs/tableau_de_synthese.pdf" target="_blank" class="btn-doc">
-                    Visualiser le Tableau de Synthèse (PDF)
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="realisations" class="section">
-        <div class="container">
-            <h2 class="section-title">Réalisations Professionnelles</h2>
-            
-            <h3>Stages en entreprise</h3>
-            <div class="grid">
-                <div class="card reveal">
-                    <div class="card-img" style="background-image: url('./Image/stage1.jpg');"></div>
-                    <div class="card-body">
-                        <h4>Migration Windows Server 2022</h4>
-                        <p>Migration des rôles AD, DNS et DHCP vers un nouveau serveur. Mise en place de GPO de sécurité.</p>
-                        <a href="#procedures" class="link">Voir la doc →</a>
+                
+                <div class="hero-image">
+                    <div class="image-placeholder profile-placeholder">
+                        <span>📷 Ta Photo / Avatar ici</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <h3 class="mt-4">Projets en formation (PPE / TP)</h3>
-            <div class="grid">
-                <div class="card reveal">
-                    <div class="card-img" style="background-image: url('./Image/tp1.jpg');"></div>
-                    <div class="card-body">
-                        <h4>Déploiement Proxmox & VLANs</h4>
-                        <p>Installation d'un hyperviseur Proxmox et segmentation réseau via des VLANs sur commutateur Cisco.</p>
-                        <a href="#procedures" class="link">Détails techniques →</a>
+        <section id="synthese">
+            <div class="container">
+                <h2 class="section-title">Tableau de Synthèse</h2>
+                <p class="section-subtitle">Ce document récapitule les compétences acquises durant ma formation et mes stages.</p>
+                <a href="./docs/tableau_de_synthese.pdf" target="_blank" class="btn btn-primary">
+                    📄 Visualiser le Tableau de Synthèse (PDF)
+                </a>
+            </div>
+        </section>
+
+        <section id="realisations">
+            <div class="container">
+                <h2 class="section-title">Réalisations Professionnelles</h2>
+                
+                <h3>Stages en entreprise</h3>
+                <div class="grid">
+                    <div class="card">
+                        <div class="image-placeholder project-placeholder">
+                            <span>📷 Image du Serveur / Projet</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Migration Windows Server 2022</h4>
+                            <p>Migration des rôles AD, DNS et DHCP vers un nouveau serveur. Mise en place de GPO.</p>
+                            <a href="#procedures" class="link">Voir la documentation →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 3rem;">Projets en formation (PPE / TP)</h3>
+                <div class="grid">
+                    <div class="card">
+                        <div class="image-placeholder project-placeholder">
+                            <span>📷 Schéma Réseau / Capture</span>
+                        </div>
+                        <div class="card-content">
+                            <h4>Déploiement Proxmox & VLANs</h4>
+                            <p>Installation d'un hyperviseur Proxmox et segmentation réseau via des VLANs.</p>
+                            <a href="#procedures" class="link">Détails techniques →</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="procedures" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">Procédures & Documentation</h2>
-            <div class="doc-list">
-                <a href="./docs/proc_glpi.pdf" target="_blank" class="doc-item">
-                    <span>📄 Installation et configuration de GLPI</span>
-                    <span class="badge">SISR</span>
-                </a>
-                <a href="./docs/proc_vpn.pdf" target="_blank" class="doc-item">
-                    <span>📄 Mise en place d'un tunnel VPN IPsec (pfSense)</span>
-                    <span class="badge">Sécurité</span>
-                </a>
-                <a href="./docs/proc_zabbix.pdf" target="_blank" class="doc-item">
-                    <span>📄 Supervision réseau avec Zabbix</span>
-                    <span class="badge">Monitoring</span>
-                </a>
-            </div>
-        </div>
-    </section>
+        <section id="procedures">
+            <div class="container">
+                <h2 class="section-title">Procédures & Documentation</h2>
+                <p class="section-subtitle">Retrouvez ci-dessous l'ensemble de mes documentations techniques.</p>
+                
+                <div class="proc-grid">
+                    
+                    <a href="./docs/apache.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category">
+                                <span class="proc-icon">🐧</span>
+                                <span>LINUX</span>
+                            </div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Apache TLS</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Linux</span>
+                            <span class="tag">Web</span>
+                            <span class="tag">Sécurité</span>
+                        </div>
+                    </a>
 
-    <section id="veille" class="section">
-        <div class="container">
-            <h2 class="section-title">Veille Technologique</h2>
-            <p class="mb-2">Ma veille porte principalement sur l'évolution de la <strong>Cybersécurité Zero Trust</strong> et l'<strong>Automatisation (Ansible/Docker)</strong>.</p>
-            <div class="grid">
-                <div class="card reveal">
-                    <div class="card-body">
-                        <h4>Outils de veille utilisés</h4>
-                        <ul>
-                            <li>Flux RSS (Le Monde Informatique, ZDNet)</li>
-                            <li>Podcasts : NoLimitSecu</li>
-                            <li>Plateformes : Feedly, LinkedIn Learning</li>
-                        </ul>
-                    </div>
+                    <a href="./docs/archi.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category">
+                                <span class="proc-icon">🗄️</span>
+                                <span>ARCHITECTURE</span>
+                            </div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Architecture 3 Tiers</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Web</span>
+                            <span class="tag">Réseau</span>
+                        </div>
+                    </a>
+
+                    <a href="./docs/bind9.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category">
+                                <span class="proc-icon">🐧</span>
+                                <span>LINUX</span>
+                            </div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Config. de Bind9 sur Linux (DNS)</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Linux</span>
+                            <span class="tag">DNS</span>
+                        </div>
+                    </a>
+
+                    <a href="./docs/ad.pdf" target="_blank" class="proc-card">
+                        <div class="proc-header">
+                            <div class="proc-category">
+                                <span class="proc-icon">🪟</span>
+                                <span>WINDOWS</span>
+                            </div>
+                            <div class="proc-arrow">↗</div>
+                        </div>
+                        <h4 class="proc-title">Configuration Windows Active Directory</h4>
+                        <div class="proc-tags">
+                            <span class="tag">Windows</span>
+                            <span class="tag">AD DS</span>
+                            <span class="tag">Serveur</span>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2024 - Prénom Nom | Portfolio SISR</p>
-    </footer>
+        <section id="veille">
+            <div class="container">
+                <h2 class="section-title">Veille Technologique</h2>
+                <div class="card" style="padding: 2rem;">
+                    <p>Ma veille porte principalement sur l'évolution de la <strong>Cybersécurité Zero Trust</strong> et l'<strong>Automatisation (Ansible/Docker)</strong>.</p>
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Outils de veille utilisés :</h4>
+                    <ul style="margin-left: 1.5rem; color: #64748b;">
+                        <li>Flux RSS (Le Monde Informatique, ZDNet)</li>
+                        <li>Podcasts : NoLimitSecu</li>
+                        <li>Plateformes : Feedly, LinkedIn Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <button id="back-to-top" title="Retour en haut">↑</button>
-
-    <script src="script.js"></script>
+    </main>
 </body>
 </html>
