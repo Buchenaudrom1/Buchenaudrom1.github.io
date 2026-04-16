@@ -1,27 +1,66 @@
-// On sélectionne toutes les sections et tous les liens du menu
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-links a');
+// 1. GESTION DU MENU MOBILE (Optionnel selon besoins)
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-links');
 
-// On écoute l'événement de défilement (scroll) de la page
-window.addEventListener('scroll', () => {
-    let current = '';
+// 2. SCROLL REVEAL ANIMATION
+// Cette fonction ajoute la classe 'active' aux éléments au fur et à mesure du scroll
+window.addEventListener('scroll', reveal);
 
-    // Pour chaque section, on vérifie si elle est visible à l'écran
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        // Si on a défilé jusqu'à cette section (avec une marge de 100px pour le menu)
-        if (pageYOffset >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
         }
-    });
+    }
+}
 
-    // On met à jour la classe "active" dans le menu
-    navLinks.forEach(link => {
-        link.classList.remove('active'); // On retire l'effet sur tous les liens
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active'); // On l'ajoute sur la section visible
-        }
+// 3. BOUTON RETOUR EN HAUT
+const backToTopBtn = document.querySelector("#back-to-top");
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
+});
+
+// 4. NAVIGATION ACTIVE LINK HIGHLIGHTING
+// Change la couleur du lien dans le menu en fonction de la section visible
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("nav .nav-container ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLi.forEach((a) => {
+    a.classList.remove("active");
+    if (a.getAttribute("href").includes(current)) {
+      a.classList.add("active");
+    }
+  });
 });
