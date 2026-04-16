@@ -677,3 +677,53 @@ section {
     justify-content: center;
     gap: 10px;
 }
+
+
+/* ===================================================================== */
+/* ===================================================================== */
+/* SECTION : IMAGE RÉALISATION STAGE 2 (VEOLIA)                         */
+/* ===================================================================== */
+/* ===================================================================== */
+
+.stage-realisation-image {
+    margin: 30px 0;
+    text-align: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+}
+
+.stage-realisation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Petit effet de zoom au survol */
+.stage-realisation-image img:hover {
+    transform: scale(1.02);
+}
+
+.image-desc {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #636e72;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Adaptation pour les tablettes et mobiles */
+@media (max-width: 768px) {
+    .stage-realisation-image {
+        padding: 10px;
+    }
+}
