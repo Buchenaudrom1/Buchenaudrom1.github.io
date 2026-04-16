@@ -102,7 +102,7 @@ body {
    CONTENU PRINCIPAL
    ========================================================================== */
 .main-content {
-    margin-left: var(--sidebar-width); /* C'est cette ligne qui pousse le contenu à droite du menu ! */
+    margin-left: var(--sidebar-width); 
     padding: 2rem 4rem;
     min-height: 100vh;
 }
@@ -116,13 +116,14 @@ section {
     padding: 4rem 0; 
 }
 
-/* Ligne de séparation entre les sections */
+/* Ligne de séparation entre les sections - MAINTENANT EN BLEU DÉGRADÉ */
 .section-divider {
     border: none;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
     margin: 2rem auto;
     width: 80%;
+    opacity: 0.5; /* Légère transparence pour que ce soit élégant */
 }
 
 .section-title {
@@ -223,7 +224,7 @@ section {
 }
 
 /* ==========================================================================
-   RÉALISATIONS (STAGES)
+   RÉALISATIONS & CERTIFICATIONS
    ========================================================================== */
 .stage-block h3 {
     color: var(--text-main);
@@ -237,7 +238,7 @@ section {
     line-height: 1.7;
 }
 
-/* Emplacements d'images grisés */
+/* Emplacements d'images grisés (Projets) */
 .image-placeholder {
     background-color: #f1f5f9;
     border: 2px dashed #cbd5e1;
@@ -253,6 +254,16 @@ section {
     height: 200px;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     border-bottom: none;
+}
+
+/* Emplacement d'images bleuté (Certifications) */
+.cert-placeholder {
+    height: 130px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: none;
+    background-color: var(--primary-light);
+    border: 2px dashed var(--primary);
+    color: var(--primary);
 }
 
 /* ==========================================================================
@@ -297,7 +308,7 @@ section {
 }
 
 .card-content { padding: 1.5rem; }
-.card-content h4 { margin-bottom: 0.8rem; font-size: 1.2rem; }
+.card-content h4 { margin-bottom: 0.8rem; font-size: 1.2rem; color: var(--text-main); }
 .card-content p { color: var(--text-muted); margin-bottom: 1.5rem; }
 
 .link { color: var(--primary); text-decoration: none; font-weight: 600; }
